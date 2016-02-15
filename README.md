@@ -1,5 +1,5 @@
 # ProtectEmailNotifier
-Sends email notifications when Nest Protect devices status is changed
+Listens Firebase updates and sends email notification when CO or smoke level is changed on one of Nest Protect devices
 
 ## Install
 Before build and run this application perform following steps:
