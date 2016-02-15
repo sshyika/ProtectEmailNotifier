@@ -24,7 +24,7 @@ public class ProtectEmailNotifier {
         final NestConnector nest = NestConnector.build(config);
         final MailConnector mail = MailConnector.build(config);
 
-        nest.addHomeStateListener(newModel -> {
+        nest.addModelListener(newModel -> {
             List<Change> changes = findUpdated(model, newModel);
             LOG.debug("Found {} updated protect devices", changes.size());
 

@@ -36,7 +36,7 @@ public class NestConnector {
 
 
     @SuppressWarnings("unchecked")
-    public void addHomeStateListener(HomeStateListener listener) {
+    public void addModelListener(ModelListener listener) {
         firebase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
