@@ -1,5 +1,5 @@
 # ProtectEmailNotifier
-Sends email notifications about Nest Protect's status changes
+Sends email notifications when Nest Protect devices status is changed
 
 ## Install
 Before build and run this application perform following steps:
@@ -15,4 +15,4 @@ Run "mvn clean install" in command line
 Run "mvn exec:java" in command line
 
 ## Stop
-Press any key
+Press any Enter
