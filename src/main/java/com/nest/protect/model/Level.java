@@ -18,7 +18,7 @@ public enum Level {
                 return level;
             }
         }
-        return null;
+        return OK;
     }
 
 }

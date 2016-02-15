@@ -1,6 +1,8 @@
 package com.nest.protect.connector;
 
 import com.nest.protect.Config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -8,6 +10,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class MailConnector {
+    private static final Logger LOG = LoggerFactory.getLogger(MailConnector.class);
 
     private String sender;
     private Session session;
@@ -42,6 +45,7 @@ public class MailConnector {
 
     public void send(String to, String subj, String body) {
         try {
+            LOG.debug("Sending email to {}", to);
 
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(sender));

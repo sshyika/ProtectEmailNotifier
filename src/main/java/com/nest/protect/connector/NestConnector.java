@@ -3,7 +3,6 @@ package com.nest.protect.connector;
 import com.firebase.client.*;
 import com.nest.protect.Config;
 import com.nest.protect.model.Model;
-import com.nest.protect.model.Structure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +40,7 @@ public class NestConnector {
         firebase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                LOG.debug("Received new model, start processing...");
                 listener.onUpdate(Model.parse((Map<String, Object>)dataSnapshot.getValue()));
             }
 
