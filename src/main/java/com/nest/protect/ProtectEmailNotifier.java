@@ -29,7 +29,7 @@ public class ProtectEmailNotifier {
             LOG.debug("Found {} updated protect devices", changes.size());
 
             for (Change change : changes) {
-                mail.send(config.getUserMail(), "Nest Protect`s status updated", change.getMessage());
+                mail.send(config.getRecipientEmail(), "Nest Protect`s status updated", change.getMessage());
             }
 
             model = newModel;

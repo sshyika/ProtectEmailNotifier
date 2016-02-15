@@ -17,7 +17,7 @@ public class Config {
     private String nestUrl;
     private String nestToken;
 
-    private String userMail;
+    private String recipientEmail;
 
     private Config() {
     }
@@ -37,7 +37,7 @@ public class Config {
             config.mailSender = props.getProperty("mail.sender");
             config.nestUrl = props.getProperty("nest.url");
             config.nestToken = props.getProperty("nest.token");
-            config.userMail = props.getProperty("user.mail");
+            config.recipientEmail = props.getProperty("recipient.mail");
 
             return config;
 
@@ -75,8 +75,8 @@ public class Config {
         return nestToken;
     }
 
-    public String getUserMail() {
-        return userMail;
+    public String getRecipientEmail() {
+        return recipientEmail;
     }
 
 }
