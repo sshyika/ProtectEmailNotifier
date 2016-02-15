@@ -1,21 +1,24 @@
-package com.nest.protect;
+package com.nest.protect.connector;
+
+import com.nest.protect.Config;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-public class Mailer {
+public class MailConnector {
 
     private String sender;
     private Session session;
 
-    private Mailer(String sender, Session session) {
+    private MailConnector(String sender, Session session) {
         this.sender = sender;
         this.session = session;
     }
 
-    public static Mailer build(Config config) {
+
+    public static MailConnector build(Config config) {
         Properties props = new Properties();
         props.put("mail.smtp.host", config.getMailHost());
         props.put("mail.smtp.port", config.getMailPort());
@@ -26,7 +29,7 @@ public class Mailer {
         props.put("mail.smtp.socketFactory.fallback", "false");
 
 
-        return new Mailer(
+        return new MailConnector(
                 config.getMailSender(),
                 Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {

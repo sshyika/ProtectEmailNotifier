@@ -16,6 +16,8 @@ public class ConfigTest {
         assertEquals("username", config.getMailUserName());
         assertEquals("password", config.getMailPassword());
         assertEquals("sender", config.getMailSender());
+        assertEquals("nestUrl", config.getNestUrl());
+        assertEquals("nestToken", config.getNestToken());
     }
 
 }
